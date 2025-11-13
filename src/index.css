@@ -94,3 +94,16 @@ button:focus-visible {
 dialog {
   flex-direction: column;
 }
+
+dialog button {
+  margin: 10px;
+}
+
+dialog img,
+dialog video {
+  margin-top: 5px;
+}
+
+.margin {
+  margin: 5px;
+}

@@ -29,12 +29,12 @@ const mediaArray = [
     media_id: 17,
     user_id: 2,
     filename:
-      'http://distribution.bbb3d.renderfarming.netvideo/mp4/bbb_sunflower_1080p_60fps_normalmp4',
+      'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     thumbnail: 'http://place-hold.it/320/240.jpgtext=Thumb1&fontsize=20',
     filesize: 1236616,
     media_type: 'video/mp4',
     title: 'Bunny',
-    description: 'Butterflies fly around the bunny',
+    description: 'Big Buck Bunny',
     created_at: '2024-01-07T20:48:13.000Z',
   },
 ];

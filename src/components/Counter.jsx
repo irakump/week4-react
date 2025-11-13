@@ -30,10 +30,11 @@ const Counter = () => {
     <>
       <div>
         <p>You clicked {count} times</p>
-        <button onClick={handleClickRight}>Click me</button>
+        <button onClick={handleClickRight} className='margin'>Click me</button>
       </div>
 
-      <input type="text"
+      <input className='margin'
+      type="text"
       placeholder="Nimesi"
       value={name}
       onChange={handleTyping}
