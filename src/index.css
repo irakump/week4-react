@@ -69,9 +69,11 @@ button:focus-visible {
 
 .pizzaContainer {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  /*margin: auto;*/
+  margin: auto;
+  max-width: 100%;
 }
 
 .pizzaCard {
@@ -80,4 +82,15 @@ button:focus-visible {
   border-radius: 6px;
   margin: 10px;
   padding: 10px;
+  max-width: 30%;
+  overflow-x: hidden;
+}
+
+.pizzaCard img {
+  max-width: 200px;
+  height: auto;
+}
+
+dialog {
+  flex-direction: column;
 }

@@ -1,4 +1,5 @@
 // rafce
+import {useState} from "react"
 import PizzaCard from "./PizzaCard"
 
 // Mock data
@@ -24,15 +25,27 @@ const pizzas = [
 
 
 const PizzaMenu = () => {
+
+  const [cart, setCart] = useState(0);
+
+  // kun lapsikomponenttti pyytää lisäämään yhden pizzan, ajetaan tämä parent elementin funktio
+
+  const addToCart = (cart) => {
+    // lisätään edelliseen arvoon yksi
+    setCart((prev) => prev + 1);
+    console.log('Cart:', cart);
+  }
+
   return (
     <>
     <div>
       <h2>PizzaMenu</h2>
     </div>
     <div>Tässä pizzavaihtoehdot</div>
+    <div>Ostoskorissa on {cart} tuotetta</div>
     <div className="pizzaContainer">
       {pizzas.map((pizza) => (
-        <PizzaCard key={pizza.id} pizza={pizza}/>
+        <PizzaCard key={pizza.id} pizza={pizza} addToCart={addToCart}/>
       ))}
 
 

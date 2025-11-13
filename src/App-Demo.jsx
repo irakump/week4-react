@@ -22,7 +22,6 @@ const App = () => {
     <>
       <h1 style={styles}>{sitename} Sivusto</h1>
 
-      <Home/>
 
       <div style={{color: 'red'}}>Moikka moi</div>
       <Greeting name="Ulla" age={39} isTeacher={true}/>
