@@ -5,7 +5,7 @@ function HookDemo() {
     const testElement = useRef(null);
 
     useEffect(() => {
-        // Update div element's background color based on count
+        // Update p element's background color based on count
         testElement.current?.style.setProperty('background-color', `rgb(${150 + count * 5}, 150, 150)`);
     }, [count]); // Only re-run the effect if count changes
 
