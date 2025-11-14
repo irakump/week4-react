@@ -92,7 +92,26 @@ button:focus-visible {
 }
 
 dialog {
+  display: flex;
   flex-direction: column;
+  max-height: 80vh;
+  max-width: 80vw;
+  overflow: scroll;
+  padding: 1rem;
+}
+
+dialog video {
+  max-width: 60%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+@media screen and (width >= 1000px) {
+  dialog video {
+    max-width: 40%;
+    height: auto;
+    margin-top: 1rem;
+  }
 }
 
 dialog button {
