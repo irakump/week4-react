@@ -1,8 +1,10 @@
+import {Link} from "react-router";
 
+// rafce antaa pohjan
+// Button korvattu Link-elementillä
 
-// rafce
+const MediaRow = ({item}) => {
 
-const MediaRow = ({item, setSelectedItem}) => {
   return (
     <>
       <tr>
@@ -15,7 +17,8 @@ const MediaRow = ({item, setSelectedItem}) => {
         <td>{item.filesize}</td>
         <td>{item.media_type}</td>
         <td>
-          <button onClick={() => setSelectedItem(item)}>View</button>
+          {/* <button onClick={() => setSelectedItem(item)}>View</button> */}
+          <Link to="/single" state={item}>View</Link>
         </td>
       </tr>
     </>
