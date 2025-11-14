@@ -1,6 +1,6 @@
 import './App.css';
 import './pico.blue.css';
-import Home from './components/Home';
+import Home from './views/Home';
 import Counter from './components/Counter';
 
 const App = () => {

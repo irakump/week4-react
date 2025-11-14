@@ -1,7 +1,7 @@
 import './App.css';
 import Greeting from './components/Greeting'; // ei tarvitse olla .jsx-päätettä
 import Footer from './components/Footer';
-import Home from './components/Home';
+import Home from './views/Home';
 import PizzaMenu from './components/PizzaMenu';
 import PizzaCard from './components/PizzaCard';
 
