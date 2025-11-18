@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 
 // Valittu item tallennetaan selectedItem-muuttujaan
 
-const fetchData = async ( url, options = {}) => {
+const fetchData = async (url, options = {}) => {
   // console.log('fetching data from url: ', url);
   const response = await fetch(url, options);
   const json = await response.json();
@@ -18,15 +18,20 @@ const fetchData = async ( url, options = {}) => {
   return json;
 };
 
-
 const Home = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [mediaArray, setMediaArray] = useState([]);
 
   const getMedia = async () => {
-    const data = await fetchData('/data.json');
-    setMediaArray(data);
+    try {
+      const data = await fetchData('/data.json');
+      setMediaArray(data);
+    } catch (e) {
+      console.log('Error;', e.message);
+    }
   };
+
+  console.log(mediaArray);
 
   useEffect(() => {
     getMedia();
@@ -34,8 +39,7 @@ const Home = () => {
 
   return (
     <>
-
-       <SingleView item={selectedItem} setSelectedItem={setSelectedItem} />
+      <SingleView item={selectedItem} setSelectedItem={setSelectedItem} />
 
       <h2>My Home</h2>
       <table>
@@ -52,7 +56,11 @@ const Home = () => {
         </thead>
         <tbody>
           {mediaArray.map((item) => (
-            <MediaRow key={item.media_id} item={item} setSelectedItem={setSelectedItem}/>
+            <MediaRow
+              key={item.media_id}
+              item={item}
+              setSelectedItem={setSelectedItem}
+            />
           ))}
         </tbody>
       </table>
