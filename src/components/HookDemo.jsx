@@ -10,7 +10,7 @@ function HookDemo() {
     }, [count]); // Only re-run the effect if count changes
 
     return (
-        <div>
+        <div className="centered">
             <p ref={testElement}>You clicked {count} times</p>
             <button onClick={() => setCount(count + 1)}>Click me</button>
         </div>
