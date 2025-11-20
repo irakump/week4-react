@@ -5,7 +5,7 @@ const MEDIA_API = import.meta.env.VITE_MEDIA_API + '/media';
 const AUTH_API = import.meta.env.VITE_AUTH_API + '/users/';
 
 const useMedia = () => {
-  // mediaArray state here
+  // mediaArray state
   const [mediaArray, setMediaArray] = useState([]);
 
   useEffect(() => {
