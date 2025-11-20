@@ -1,3 +1,7 @@
-# Hooks assignment
+# Week 4 assignments
 
-Contains assignments first-component, state-management, routing and hooks as branches
+## Branches 
+- [first-component](https://github.com/irakump/week4-react/tree/first-component)
+- [state-management](https://github.com/irakump/week4-react/tree/state-management)
+- [routing](https://github.com/irakump/week4-react/tree/routing)
+- [hooks](https://github.com/irakump/week4-react/tree/hooks)
