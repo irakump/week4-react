@@ -6,8 +6,8 @@ const mediaArray = [
   {
     media_id: 8,
     user_id: 5,
-    filename: 'https://place-hold.it/1200x800.jpgtext=Pic1&fontsize=120',
-    thumbnail: 'http://place-hold.it/320/240.jpgtext=Thumb2&fontsize=20',
+    filename: 'https://place-hold.it/1200x800.jpg&text=Pic1&fontsize=120',
+    thumbnail: 'http://place-hold.it/320/240.jpg&text=Thumb2&fontsize=20',
     filesize: 170469,
     media_type: 'image/jpeg',
     title: 'Picture 1',
