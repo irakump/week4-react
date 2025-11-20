@@ -1,40 +1,35 @@
 import MediaRow from '../components/MediaRow';
 import SingleView from '../components/SingleView';
 import {useEffect, useState} from 'react';
+import {fetchData} from '../utils/fetchData.js';
 
-// Valittu item tallennetaan selectedItem-muuttujaan
-
-const fetchData = async (url, options = {}) => {
-  // console.log('fetching data from url: ', url);
-  const response = await fetch(url, options);
-  const json = await response.json();
-  if (!response.ok) {
-    // console.log('json', json);
-    if (json.message) {
-      throw new Error(json.message);
-    }
-    throw new Error(`Error ${response.status} occured`);
-  }
-  return json;
-};
+const MEDIA_API = import.meta.env.VITE_MEDIA_API + '/media';
+const AUTH_API = import.meta.env.VITE_AUTH_API + '/users/';
 
 const Home = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [mediaArray, setMediaArray] = useState([]);
 
-  const getMedia = async () => {
-    try {
-      const data = await fetchData('/data.json');
-      setMediaArray(data);
-    } catch (e) {
-      console.log('Error;', e.message);
-    }
-  };
-
-  console.log(mediaArray);
-
   useEffect(() => {
-    getMedia();
+    try {
+      const getMedia = async () => {
+        const mediaData = await fetchData(MEDIA_API);
+        console.log(mediaData);
+
+        const newArray = await Promise.all(
+          mediaData.map(async (item) => {
+            const user = await fetchData(AUTH_API + item.user_id);
+            console.log(user);
+            return {...item, username: user.username};
+          }),
+        );
+        console.log(newArray);
+        setMediaArray(newArray);
+      };
+      getMedia();
+    } catch (e) {
+      console.log('Error;', e);
+    }
   }, []);
 
   return (
@@ -51,6 +46,7 @@ const Home = () => {
             <th>Created</th>
             <th>Size</th>
             <th>Type</th>
+            <th>Owner</th>
             <th>View</th>
           </tr>
         </thead>

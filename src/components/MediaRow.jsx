@@ -16,6 +16,7 @@ const MediaRow = ({item}) => {
         <td>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
         <td>{item.filesize}</td>
         <td>{item.media_type}</td>
+        <td>{item.username}</td>
         <td>
           {/* <button onClick={() => setSelectedItem(item)}>View</button> */}
           <Link to="/single" state={item}>View</Link>
