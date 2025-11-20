@@ -5,3 +5,8 @@
 - [state-management](https://github.com/irakump/week4-react/tree/state-management)
 - [routing](https://github.com/irakump/week4-react/tree/routing)
 - [hooks](https://github.com/irakump/week4-react/tree/hooks)
+
+---
+
+# Week 5 assignments
+- [custom-hooks](https://github.com/irakump/week4-react/tree/custom-hooks)
