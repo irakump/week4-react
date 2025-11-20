@@ -17,8 +17,8 @@ const mediaArray = [
   {
     media_id: 9,
     user_id: 7,
-    filename: 'https://place-hold.it/800x600.jpgtext=Pic2&fontsize=72',
-    thumbnail: 'http://place-hold.it/320/240.jpgtext=Thumb3&fontsize=20',
+    filename: 'https://place-hold.it/800x600.jpg&text=Pic2&fontsize=72',
+    thumbnail: 'http://place-hold.it/320/240.jpg&text=Thumb3&fontsize=20',
     filesize: 1002912,
     media_type: 'image/jpeg',
     title: 'Pic 2',
@@ -30,7 +30,7 @@ const mediaArray = [
     user_id: 2,
     filename:
       'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-    thumbnail: 'http://place-hold.it/320/240.jpgtext=Thumb1&fontsize=20',
+    thumbnail: 'http://place-hold.it/320/240.jpg&text=Thumb1&fontsize=20',
     filesize: 1236616,
     media_type: 'video/mp4',
     title: 'Bunny',
@@ -46,8 +46,7 @@ const Home = () => {
 
   return (
     <>
-
-       <SingleView item={selectedItem} setSelectedItem={setSelectedItem} />
+      <SingleView item={selectedItem} setSelectedItem={setSelectedItem} />
 
       <h2>My Home</h2>
       <table>
@@ -64,7 +63,11 @@ const Home = () => {
         </thead>
         <tbody>
           {mediaArray.map((item) => (
-            <MediaRow key={item.media_id} item={item} setSelectedItem={setSelectedItem}/>
+            <MediaRow
+              key={item.media_id}
+              item={item}
+              setSelectedItem={setSelectedItem}
+            />
           ))}
         </tbody>
       </table>

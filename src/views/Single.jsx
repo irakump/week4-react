@@ -18,7 +18,7 @@ const imageOrVideo = (item) => {
 
 const Single = () => {
   const {state} = useLocation();
-  const item = state;
+  const item = state;//.item;
   const navigate = useNavigate();
 
   return (

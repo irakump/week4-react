@@ -18,7 +18,7 @@ const MediaRow = ({item}) => {
         <td>{item.media_type}</td>
         <td>
           {/* <button onClick={() => setSelectedItem(item)}>View</button> */}
-          <Link to="/single" state={item}>View</Link>
+          <Link to="/single" state={{item}}>View</Link>
         </td>
       </tr>
     </>
