@@ -1,7 +1,5 @@
 // Shared layout for all views
 
-import React from 'react';
-import PropTypes from 'prop-types';
 import {Link, Outlet} from 'react-router';
 
 const Layout = () => {
@@ -18,6 +16,16 @@ const Layout = () => {
           <li>
             <Link to="/upload">Upload</Link>
           </li>
+          <li>
+            <Link to="/loginSecond">Some forms</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/Logout">Logout</Link>
+          </li>
+
         </ul>
       </nav>
       <main>

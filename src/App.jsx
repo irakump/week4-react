@@ -6,6 +6,9 @@ import Home from './views/Home';
 import Profile from './views/Profile';
 import Upload from './views/Upload';
 import Single from './views/Single';
+import Login from './views/Login';
+import LoginSecond from './views/LoginSecond';
+import Logout from './views/Logout';
 
 const App = () => {
   return (
@@ -16,6 +19,10 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/upload" element={<Upload />} />
+            <Route path="/loginSecond"
+            element={<LoginSecond />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/single" element={<Single />}/>
           </Route>
         </Routes>
