@@ -12,22 +12,21 @@ const LoginForm = () => {
   };
 
   const doLogin = async (formData) => {
-    console.log(formData);
-    //const doLogin = async () => {
-    //console.log(inputs);
-    // TODO: add login functionalities here
+    //console.log(formData); // Älä koskaan loggaa tuotannossa login-tietoja
+    try {
+      const userInfo = await postLogin(formData);
+      localStorage.setItem('token', userInfo.token);
+      console.log(userInfo);
 
-    //await postLogin(formData);
-    const userInfo = await postLogin(formData);
-    console.log(userInfo);
+    } catch (error) {
+      console.log('Login error: ', error);
+      // TODO: kerro käyttäjälle, miksi kirjautuminen epäonnistui
+    }
   };
 
-  const {inputs, handleInputChange, handleSubmit} = useForm(
-    doLogin,
-    initValues,
-  );
+  const {handleInputChange, handleSubmit} = useForm(doLogin, initValues);
 
-  console.log(inputs);
+  //console.log(inputs);
 
   return (
     <>

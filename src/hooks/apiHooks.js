@@ -13,7 +13,7 @@ const useMedia = () => {
       // Hae mediadata
       const getMedia = async () => {
         const mediaData = await fetchData(MEDIA_API);
-        console.log(mediaData);
+        //console.log(mediaData);
 
         // Hae jokaiselle media-itemille käyttäjä
         const newArray = await Promise.all(
@@ -39,6 +39,7 @@ const useMedia = () => {
 };
 
 const useAuthentication = () => {
+
   const postLogin = async (inputs) => {
     const fetchOptions = {
       method: 'POST',
@@ -59,4 +60,26 @@ const useAuthentication = () => {
   return {postLogin};
 };
 
-export {useMedia, useAuthentication};
+// Use user hook
+const useUser = () => {
+
+  const getUserByToken = async (token) => {
+    const options = {
+      headers: {
+        'Authorization': 'Bearer ' + token,
+      },
+    };
+
+    const tokenResult = fetchData(`${AUTH_API}/token`, options);
+    return tokenResult;
+  };
+
+  const postUser = async (user) => {
+    // TODO: register new user here: http://media.mw.metropolia.fi/wbma/docs/#api-User-CreateUser
+  };
+
+  // Palauta funktiot js-objektina (getUserBytoken nimellä getUserBytoken)
+  return {getUserByToken, postUser};
+};
+
+export {useMedia, useAuthentication, useUser};
