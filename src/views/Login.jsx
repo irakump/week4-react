@@ -9,12 +9,14 @@ const Login = () => {
   return (
     <>
       {isLogin ? <LoginForm /> : <RegisterForm />}
+      <br />
       <button
         onClick={() => {
           setIsLogin(!isLogin);
         }}
       >
-        {isLogin ? 'Rekisteröidy' : 'Kirjaudu'}
+
+        {isLogin ? 'Uusi käyttäjä? Rekisteröidy tästä' : 'Onko sinulla tunnukset? Kirjaudu tästä'}
       </button>
     </>
   );
