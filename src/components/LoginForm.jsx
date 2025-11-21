@@ -1,10 +1,9 @@
 /*import {useState} from 'react';*/
 import useForm from '../hooks/formHooks';
-import {useAuthentication} from '../hooks/apiHooks';
+import {useUserContext} from '../hooks/contextHooks';
 
 const LoginForm = () => {
-  // useAuthentication palauttaa postLogin-funktion
-  const {postLogin} = useAuthentication();
+  const {handleLogin} = useUserContext();
 
   const initValues = {
     username: '',
@@ -14,9 +13,8 @@ const LoginForm = () => {
   const doLogin = async (formData) => {
     //console.log(formData); // Älä koskaan loggaa tuotannossa login-tietoja
     try {
-      const userInfo = await postLogin(formData);
-      localStorage.setItem('token', userInfo.token);
-      console.log(userInfo);
+      // Responsea ei tarvitse tässä tallentaa (tehdään contextissa?)
+      await handleLogin(formData);
 
     } catch (error) {
       console.log('Login error: ', error);

@@ -1,3 +1,4 @@
+import HookDemo from './../components/HookDemo';
 
 const Upload = () => {
   return (
