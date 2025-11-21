@@ -9,3 +9,7 @@
 ---
 
 # Week 5 assignments
+- custom hooks
+- forms
+- context
+- upload
