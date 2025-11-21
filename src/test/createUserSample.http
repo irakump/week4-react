@@ -1,0 +1,9 @@
+### Create new user (add details here)
+POST https://media2.edu.metropolia.fi/auth-api/api/v1/users
+Content-Type: application/json
+
+{
+  "username": "username",
+  "password": "password",
+  "email": "email@email.com"
+}
