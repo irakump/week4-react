@@ -9,7 +9,7 @@
 ---
 
 # Week 5 assignments
-- custom hooks
-- forms
-- context
-- upload
+- [custom hooks](https://users.metropolia.fi/~iraku/custom-hooks/)
+- [forms]()
+- [context]()
+- [upload](https://users.metropolia.fi/~iraku/upload/)
