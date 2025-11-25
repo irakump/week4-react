@@ -20,9 +20,15 @@ const useForm = (callback, initState) => {
          }));
      };
 
+     const resetForm = () => {
+      setInputs(initState);
+     };
+
      return {
          handleSubmit,
          handleInputChange,
+         inputs,
+         resetForm
      };
 };
 

@@ -127,3 +127,7 @@ dialog video {
 .margin {
   margin: 5px;
 }
+
+#upload-image {
+  margin-bottom: 15px;
+}
