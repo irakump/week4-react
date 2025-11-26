@@ -18,7 +18,7 @@ const LoginForm = () => {
 
     } catch (error) {
       console.log('Login error: ', error);
-      // TODO: kerro käyttäjälle, miksi kirjautuminen epäonnistui
+      alert(`Login failed: ${error.message}`);   // Kerro käyttäjälle, miksi kirjautuminen epäonnistui
     }
   };
 

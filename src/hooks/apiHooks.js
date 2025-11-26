@@ -93,8 +93,21 @@ const useUser = () => {
   };
 
   const postUser = async (user) => {
-    // TODO: register new user here: http://media.mw.metropolia.fi/wbma/docs/#api-User-CreateUser
-    console.log('postUser', user);
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    }
+
+    const registrationResult = await fetchData(`${AUTH_API}/users/`, options);
+
+    //console.log('reg.result:', registrationResult);
+
+    return registrationResult;
+
   };
 
   return {getUserByToken, postUser};
