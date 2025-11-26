@@ -1,12 +1,16 @@
 import {useState, useEffect} from 'react';
 import HookDemo from '../components/HookDemo';
 import {useUser} from '../hooks/apiHooks';
+import { useUserContext } from '../hooks/contextHooks';
 
 const Profile = () => {
-  const [user, setUser] = useState(null); // State, joka päivittää UI:n (alkuarvona tyhjä = falsy)
+  // user state korvattu contextissa olevalla statella
+  //const [user, setUser] = useState(null); // State, joka päivittää UI:n (alkuarvona tyhjä = falsy)
   const [error, setError] = useState('');
   const {getUserByToken} = useUser();
+  const {user} = useUserContext();
 
+  /*
   useEffect(() => {
     const getUserData = async () => {
       const token = localStorage.getItem('token');
@@ -21,6 +25,7 @@ const Profile = () => {
 
     getUserData();
   }, []);
+  */
 
   // Jos käyttäjä on olemassa, näytetään tiedot (false/falsy user -> ei näytetä)
   return (

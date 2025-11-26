@@ -9,23 +9,58 @@ import Single from './views/Single';
 import Login from './views/Login';
 import LoginSecond from './views/LoginSecond';
 import Logout from './views/Logout';
+import {UserProvider} from './contexts/UserContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   return (
     <>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/upload" element={<Upload />} />
-            <Route path="/loginSecond"
-            element={<LoginSecond />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/single" element={<Single />}/>
-          </Route>
-        </Routes>
+        <UserProvider>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/upload"
+                element={
+                  <ProtectedRoute>
+                    <Upload />
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/loginSecond"
+                element={
+                  <ProtectedRoute>
+                    <LoginSecond />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/logout"
+                element={
+                  <ProtectedRoute>
+                    <Logout />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/login" element={<Login />} />
+
+              <Route path="/single" element={<Single />} />
+            </Route>
+          </Routes>
+        </UserProvider>
       </BrowserRouter>
     </>
   );

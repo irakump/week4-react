@@ -1,8 +1,16 @@
 // Shared layout for all views
 
 import {Link, Outlet} from 'react-router';
+import {useUserContext} from '../hooks/contextHooks';
+import {useEffect} from 'react';
 
 const Layout = () => {
+  const {handleAutoLogin, user} = useUserContext();
+
+  useEffect(() => {
+    handleAutoLogin();
+  }, []);
+
   return (
     <div>
       <nav>
@@ -10,21 +18,29 @@ const Layout = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-          <li>
-            <Link to="/upload">Upload</Link>
-          </li>
-          <li>
-            <Link to="/loginSecond">Some forms</Link>
-          </li>
-          <li>
+
+          {user && (
+            <>
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+              <li>
+                <Link to="/upload">Upload</Link>
+              </li>
+              <li>
+                <Link to="/loginSecond">SomeForms</Link>
+              </li>
+              <li>
+                <Link to="/Logout">Logout</Link>
+              </li>
+            </>
+          )}
+
+          {!user && (
+            <li>
             <Link to="/login">Login</Link>
           </li>
-          <li>
-            <Link to="/Logout">Logout</Link>
-          </li>
+          )}
 
         </ul>
       </nav>
