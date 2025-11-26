@@ -17,10 +17,11 @@ const LoginForm = () => {
       const userInfo = await postLogin(formData);
       localStorage.setItem('token', userInfo.token);
       console.log(userInfo);
+      alert('Successful login');
 
     } catch (error) {
       console.log('Login error: ', error);
-      // TODO: kerro käyttäjälle, miksi kirjautuminen epäonnistui
+      alert(`Login failed: ${error.message}`);   // Kerro käyttäjälle, miksi kirjautuminen epäonnistui
     }
   };
 
