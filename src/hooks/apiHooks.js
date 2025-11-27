@@ -25,7 +25,7 @@ const useMedia = () => {
           }),
         );
 
-        console.log(newArray);
+        //console.log(newArray);
         setMediaArray(newArray);
       };
 
@@ -54,8 +54,24 @@ const useMedia = () => {
     return mediaResponse;
   };
 
+  const deleteMedia = async (id, token) => {
+    const fetchOptions = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token,
+      },
+    };
+
+    // delete item
+    const deleteResponse = await fetchData(`${MEDIA_API}/${id}`, fetchOptions);
+
+    // return the data
+    return deleteResponse;
+  };
+
   // Komponentille palautetaan mediaArray
-  return {mediaArray, postMedia};
+  return {mediaArray, postMedia, deleteMedia};
 };
 
 const useAuthentication = () => {
@@ -93,21 +109,18 @@ const useUser = () => {
   };
 
   const postUser = async (user) => {
-
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(user),
-    }
+    };
 
     const registrationResult = await fetchData(`${AUTH_API}/users/`, options);
 
     //console.log('reg.result:', registrationResult);
-
     return registrationResult;
-
   };
 
   return {getUserByToken, postUser};

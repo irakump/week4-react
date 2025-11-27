@@ -11,9 +11,11 @@ const Layout = () => {
     handleAutoLogin();
   }, []);
 
+  // <ul className='bg-amber-300'>
+
   return (
     <div>
-      <nav>
+      <nav className='mb-2'>
         <ul>
           <li>
             <Link to="/">Home</Link>

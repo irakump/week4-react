@@ -7,7 +7,7 @@ const Home = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   // Hook palauttaa mediaArrayn
-  const {mediaArray} = useMedia();
+  const {mediaArray, deleteMedia, modifyMedia} = useMedia();
 
   return (
     <>
@@ -15,7 +15,7 @@ const Home = () => {
 
       <h2>My Home</h2>
       <table>
-        <thead>
+        <thead className='bg-blue-200 *:p-5'>
           <tr>
             <th>Thumbnail</th>
             <th>Title</th>
@@ -33,6 +33,8 @@ const Home = () => {
               key={item.media_id}
               item={item}
               setSelectedItem={setSelectedItem}
+              deleteMedia={deleteMedia}
+              modifyMedia={modifyMedia}
             />
           ))}
         </tbody>
