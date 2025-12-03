@@ -48,7 +48,7 @@ const MediaRow = (props) => {
         <td>{item.media_type}</td>
         <td>{item.username}</td>
         <td>
-          <Link to="/single" state={item}>
+          <Link to="/single" state={item} className='bg-blue-500 p-2 rounded-md text-white'>
             View
           </Link>
 
