@@ -15,8 +15,8 @@ const Layout = () => {
 
   return (
     <div>
-      <nav className='mb-5 text-xl text-blue-600'>
-        <ul className='flex flex-row gap-5 *:font-medium'>
+      <nav className="mb-5 text-xl text-blue-600">
+        <ul className="flex flex-row gap-5 *:font-medium">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -30,9 +30,6 @@ const Layout = () => {
                 <Link to="/upload">Upload</Link>
               </li>
               <li>
-                <Link to="/loginSecond">SomeForms</Link>
-              </li>
-              <li>
                 <Link to="/Logout">Logout</Link>
               </li>
             </>
@@ -40,10 +37,9 @@ const Layout = () => {
 
           {!user && (
             <li>
-            <Link to="/login">Login</Link>
-          </li>
+              <Link to="/login">Login</Link>
+            </li>
           )}
-
         </ul>
       </nav>
       <main>
