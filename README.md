@@ -13,3 +13,7 @@
 - [forms](https://users.metropolia.fi/~iraku/forms/)
 - [context](https://users.metropolia.fi/~iraku/context/)
 - [upload](https://users.metropolia.fi/~iraku/upload/)
+
+---
+# Week 6 assignments
+- [tailwind](https://users.metropolia.fi/~iraku/tailwind/)
