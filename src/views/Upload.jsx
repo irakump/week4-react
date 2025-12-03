@@ -75,7 +75,7 @@ const Upload = () => {
             id="file"
             accept="image/*, video/*"
             onChange={handleFileChange}
-            className="border rounded p-4 bg-white"
+            className="border rounded bg-white min-h-12 p-4"
           />
         </div>
         <img
