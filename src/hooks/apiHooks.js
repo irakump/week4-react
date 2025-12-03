@@ -54,6 +54,25 @@ const useMedia = () => {
     return mediaResponse;
   };
 
+  const modifyMedia = async (inputs, id, token) => {
+    const fetchOptions = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token,
+      },
+
+      body: JSON.stringify({...inputs}),
+    };
+
+
+    // delete item
+    const modifyResponse = await fetchData(`${MEDIA_API}/${id}`, fetchOptions);
+
+    // return the data
+    return modifyResponse;
+  };
+
   const deleteMedia = async (id, token) => {
     const fetchOptions = {
       method: 'DELETE',
@@ -63,6 +82,7 @@ const useMedia = () => {
       },
     };
 
+
     // delete item
     const deleteResponse = await fetchData(`${MEDIA_API}/${id}`, fetchOptions);
 
@@ -71,7 +91,7 @@ const useMedia = () => {
   };
 
   // Komponentille palautetaan mediaArray
-  return {mediaArray, postMedia, deleteMedia};
+  return {mediaArray, postMedia, modifyMedia, deleteMedia};
 };
 
 const useAuthentication = () => {
