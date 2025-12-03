@@ -1,5 +1,5 @@
+//import './pico.blue.css';
 import './App.css';
-import './pico.blue.css';
 import {BrowserRouter, Routes, Route} from 'react-router';
 import Layout from './components/Layout';
 import Home from './views/Home';

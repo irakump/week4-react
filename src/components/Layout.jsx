@@ -15,8 +15,8 @@ const Layout = () => {
 
   return (
     <div>
-      <nav className='mb-2'>
-        <ul>
+      <nav className='mb-5 text-xl text-blue-600'>
+        <ul className='flex flex-row gap-5 *:font-medium'>
           <li>
             <Link to="/">Home</Link>
           </li>

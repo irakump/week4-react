@@ -13,10 +13,10 @@ const Home = () => {
     <>
       <SingleView item={selectedItem} setSelectedItem={setSelectedItem} />
 
-      <h2>My Home</h2>
+      <h2 className='text-3xl mb-10 font-bold'>My Home</h2>
       <table>
-        <thead className='bg-blue-200 *:p-5'>
-          <tr>
+        <thead className='bg-blue-300'>
+          <tr className='m-5 h-8'>
             <th>Thumbnail</th>
             <th>Title</th>
             <th>Description</th>
@@ -24,10 +24,10 @@ const Home = () => {
             <th>Size</th>
             <th>Type</th>
             <th>Owner</th>
-            <th>View</th>
+            <th className='p-4'>View</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='*:text-lg'>
           {mediaArray.map((item) => (
             <MediaRow
               key={item.media_id}
