@@ -7,8 +7,8 @@ const Logout = () => {
 
   return (
     <>
-    <h3>Kirjaudu ulos</h3>
-    <button onClick={handleLogout}>Logout</button>
+    <h3 className="p-5 font-semibold">Kirjaudu ulos</h3>
+    <button onClick={handleLogout} className="bg-blue-500 rounded-xl text-white text-md hover:bg-blue-600 mt-2 p-5">Logout</button>
       <LogoutForm/>
     </>
   );
